@@ -23,9 +23,19 @@ public class Present {
         String s = Arrays.toString(s2);
         return s;
     }
-   
+//    public int menu(){
+//     System.out.println("Нажмите 1 чтобы создать");
+//     System.out.println("Нажмите 2 чтобы заполнить");
+//     System.out.println("Нажмите 0 чтобы выйти из меню");
+//     int sssss = scanner.nextInt();
+//     return sssss;
+//    }
         
-    
+   public String NameSpravochnik(){
+    String nameSpravochnik = scanner.nextLine();
+    return nameSpravochnik;
+   } 
+
    @Override
    public String toString(){
     String s2 = sss(FamilyNameYearPol());

@@ -5,24 +5,22 @@ import java.util.Arrays;
 
 public class Model implements Proverka{
 public String [] s4;
-public Model(String [] s4) {
-    
+public String f;
+public Model(String f, String [] s4) {
+    this.f = f;
     this.s4 = s4;
     testerNamePol(s4);
     testerDate(s4);
     testerPhone(s4);
     
     
-    writer(s4);
+    writer(f, s4);
     
 }
 //public String
-public void writer(String [] s4){
-    String res = s4[0];
-    int count = 0;
+public void writer(String f, String [] s4){
     if(s4.length == 6){
-        File file = new File(res);
-        try (FileWriter fw = new FileWriter(res, true)) {  ///СЛЫШАЛ ЧТО ЗДЕСЬ ТАКЖЕ МОЖНО И НЕ СОЗДАВАТЬ ФАЙЛ ЯКОБЫ ОН СОЗДАСТЬСЯ ПО УМОЛЧАНИЮ ЕСЛИ ЕГО НЕТ С ПОМОЩЬЮ:(FileWriter fw = new FileWriter(res, false)) 
+        try (FileWriter fw = new FileWriter(f, true)) {  ///СЛЫШАЛ ЧТО ЗДЕСЬ ТАКЖЕ МОЖНО И НЕ СОЗДАВАТЬ ФАЙЛ ЯКОБЫ ОН СОЗДАСТЬСЯ ПО УМОЛЧАНИЮ ЕСЛИ ЕГО НЕТ С ПОМОЩЬЮ:(FileWriter fw = new FileWriter(res, false)) 
             fw.write(Arrays.toString(s4) + "\n");   // МОЖЕШЬ ПРОСТО ЗАПИСЫЫВАТЬ СТРОКУ СНОВА ИЛИ ОСТАВИТЬ ТАК
         } catch (IOException e) {
             e.printStackTrace();
@@ -74,4 +72,3 @@ public void writer(String [] s4){
     }
 
 }
-    
