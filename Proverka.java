@@ -1,5 +1,5 @@
 interface Proverka {
-    public boolean testerPhone(String [] s4);
-    public boolean testerDate(String [] s4);
-    public boolean testerNamePol(String [] s4);
+    public void testerPhone(String [] s4);
+    public void testerDate(String [] s4);
+    public void testerNamePol(String [] s4);
 }

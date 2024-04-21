@@ -29,17 +29,18 @@ public void writer(String f, String [] s4){
     else {throw new RuntimeException("Введено недостаточное количество данных");}
 }
     @Override
-    public boolean testerPhone(String [] s4){
+    public void testerPhone(String [] s4){
         boolean isOnlyDigits = true;
             for(int j = 0; j < s4[4].length() && isOnlyDigits; j++) {
                 if(!Character.isDigit(s4[4].charAt(j))) {
                     isOnlyDigits = false;
+                    throw new RuntimeException("Номер введен некорректно");
                 }
             }   
-            return isOnlyDigits;
+            
     }
     @Override
-    public boolean testerDate(String [] s4){
+    public void testerDate(String [] s4){
         boolean isOnlyDigits = true;
         if(s4[3].length() == 10){
             for(int i = 0; i < s4[3].length() && isOnlyDigits; i++) {
@@ -51,10 +52,10 @@ public void writer(String f, String [] s4){
                     }
         }
         else {throw new RuntimeException("Дата введена не полностью или в неправильном формате");}
-        return isOnlyDigits;
+        
     }
     @Override
-    public boolean testerNamePol(String [] s4){
+    public void testerNamePol(String [] s4){
         boolean isOnlyDigits = true;
         for (int i = 0; i < s4.length - 3; i++) {
             for (int j = 0; j < s4[i].length(); j++) {
@@ -68,7 +69,7 @@ public void writer(String f, String [] s4){
                     isOnlyDigits = true;
         }
         else throw new RuntimeException("Пол введён некорректно");
-        return isOnlyDigits;
+        
     }
 
 }
